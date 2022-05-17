@@ -1,0 +1,19 @@
+<ion-header> 
+<ion-toolbar color="warning">
+    <ion-icon name="arrow-back-outline" slot="start" size="large"(click)="back()"></ion-icon>
+  <ion-title><p align="center">New Message</p></ion-title>
+</ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row *ngFor="let message of messages">
+    <ion-col size-12>
+      <b>{{ message.user }}</b>
+      <span>{{ message.msg }}</span>
+    </ion-col>
+  </ion-row>
+  <div class="send">
+    
+  <ion-input placeholder="Text Message" class="input"text-right id="input" [(ngModel)]="inputValue"></ion-input>
+  <ion-button  color="warning" (click)="openToast()">Send<ion-icon name="send" slot="end" size="large">Open Toast</ion-icon></ion-button>
+</div>
+</ion-content>
